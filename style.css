@@ -1,0 +1,120 @@
+/* 🌐 RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f6f8fc;
+  color: #333;
+}
+
+/* 🌟 ЛОГОТИП */
+.logo {
+  height: 80px;
+  max-width: 220px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* 🟪 ВЕРТИКАЛЬНІ КНОПКИ */
+.vertical-buttons {
+  position: fixed;
+  top: 200px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.vertical-btn {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  background-color: rgba(243, 213, 226, 0.8); /* ніжно-рожевий */
+  color: #6a3093;
+  padding: 10px 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid #e8c7d4;
+  backdrop-filter: blur(6px);
+}
+
+.vertical-btn:hover {
+  background-color: rgba(243, 213, 226, 1);
+  color: #4e1f6b;
+}
+
+/* 🔄 ПАНЕЛІ */
+.vertical-panel {
+  position: fixed;
+  top: 180px;
+  left: -260px;
+  width: 240px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  transition: left 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.vertical-panel.active {
+  left: 40px;
+  opacity: 1;
+}
+
+/* 📱 АДАПТИВ */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .logo {
+    height: 70px;
+    max-width: 180px;
+  }
+
+  .care-photo {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .care-container,
+  .care-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vertical-panel {
+    top: 100px;
+    left: -100%;
+    width: 80%;
+  }
+
+  .vertical-panel.active {
+    left: 10px;
+  }
+}
