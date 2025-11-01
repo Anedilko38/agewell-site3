@@ -32,9 +32,21 @@ const translations = {
 };
 
 function setLanguage(lang) {
-  const elements = document.querySelectorAll("[data-i18n]");
-  elements.forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    el.textContent = translations[lang][key] || key;
-  });
+  document.documentElement.lang = lang;
+  if (lang === 'ua') {
+    // показати українську версію
+    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('[data-lang="ua"]').forEach(el => el.style.display = '');
+  } else {
+    // показати англійську
+    document.querySelectorAll('[data-lang="ua"]').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = '');
+  }
 }
+<script>
+  function togglePopup() {
+    const popup = document.getElementById("getStartedPopup");
+    popup.style.display = (popup.style.display === "none") ? "block" : "none";
+  }
+</script>
+
