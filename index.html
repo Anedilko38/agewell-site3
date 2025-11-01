@@ -5,26 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Agewell</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    function togglePanel(id) {
-      document.querySelectorAll('.vertical-panel').forEach(panel => {
-        if (panel.id !== id) panel.classList.remove('active');
-      });
-      const panel = document.getElementById(id);
-      panel.classList.toggle('active');
-    }
-  </script>
 </head>
 <body>
 
-<!-- 🔄 Language Switcher -->
+<!-- 🌍 Language Switcher -->
 <div class="lang-switcher">
-  <button onclick="setLanguage('en')" aria-label="English">
-    <img src="images/flag-en.svg" alt="English" class="flag-icon" /> EN
+  <button onclick="setLanguage('en')">
+    <img src="images/flag-en.svg" alt="EN" class="flag-icon" /> EN
   </button>
   |
-  <button onclick="setLanguage('ua')" aria-label="Українська">
-    <img src="images/flag-ua.svg" alt="Українська" class="flag-icon" /> UA
+  <button onclick="setLanguage('ua')">
+    <img src="images/flag-ua.svg" alt="UA" class="flag-icon" /> UA
   </button>
 </div>
 
@@ -41,13 +32,13 @@
   </div>
 </header>
 
-<!-- 🟣 Side Buttons -->
+<!-- 🟣 Vertical Buttons -->
 <div class="vertical-buttons">
   <button class="vertical-btn" onclick="togglePanel('contact-panel')">💬 Contact Us</button>
-  <button class="vertical-btn" onclick="togglePanel('download-panel')">📄 Download</button>
+  <button class="vertical-btn" onclick="togglePanel('download-panel')">📄 Download Resource</button>
 </div>
 
-<!-- ⬅️ Sliding Panels -->
+<!-- 🟢 Slide Panels -->
 <div class="vertical-panel" id="contact-panel">
   <h3>Contact Us</h3>
   <p>You can reach us by phone or email. We're here to help!</p>
@@ -58,13 +49,92 @@
   <p><a href="#">Click here to download our brochure</a></p>
 </div>
 
-<!-- 🔽 Content (About Section for приклад) -->
+<!-- ℹ️ About -->
 <section class="about" id="about">
   <div class="container">
     <h2>About Us</h2>
-    <p>We provide loving care for seniors with heart and dignity.</p>
+    <p>At Agewell, we provide high-quality, loving care for seniors...</p>
   </div>
 </section>
+
+<!-- 🧡 Care Info -->
+<section class="care-info">
+  <div class="container care-container">
+    <div class="care-text">
+      <h2>We’ve got you covered for <span class="highlight">today</span></h2>
+      <p>We can help with:</p>
+      <ul>
+        <li><span class="icon">💊</span> Medication reminders</li>
+        <li><span class="icon">🏥</span> Transitioning home from the hospital</li>
+        <li><span class="icon">🚗</span> Transportation to doctor’s appointments</li>
+        <li><span class="icon">🥗</span> Healthy diet and nutrition</li>
+      </ul>
+    </div>
+    <div class="care-image">
+      <img src="images/today-care.jpg" alt="Clock and Medicine" class="care-photo" />
+    </div>
+  </div>
+
+  <div class="container care-bottom">
+    <div class="care-image">
+      <img src="images/tomorrow-care.jpg" alt="Healthy Food" class="care-photo" />
+    </div>
+    <div class="care-text">
+      <h2>And we’ve got you covered for <span class="highlight">tomorrow</span></h2>
+      <p>With ongoing assessments and professional caregivers, we adapt services for long-term needs and work with other providers for holistic care.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 💼 Services -->
+<section class="services" id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <ul>
+      <li>24/7 Nursing Support</li>
+      <li>Personalized Care Plans</li>
+      <li>Rehabilitation Programs</li>
+      <li>Daily Activities & Events</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 🏞️ Gallery -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <h2>Our Facilities</h2>
+    <div class="gallery-grid">
+      <img src="https://via.placeholder.com/300x200" alt="Facility 1" />
+      <img src="https://via.placeholder.com/300x200" alt="Facility 2" />
+      <img src="https://via.placeholder.com/300x200" alt="Facility 3" />
+    </div>
+  </div>
+</section>
+
+<!-- 📬 Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- 🔚 Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Agewell. All rights reserved.</p>
+</footer>
+
+<script src="lang.js"></script>
+<script>
+  function togglePanel(id) {
+    document.getElementById(id).classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>
